@@ -1,0 +1,176 @@
+#{$container} {
+  margin: 0 auto;
+  padding: 0px $line-height; 
+}
+
+$font-family: verdana, sans-serif !default;
+
+img, embed, object, video{
+  max-width:100%;
+}
+input, textarea {
+  padding: 0.5em;
+  font-size: 21px;
+  font-family: arial;
+  border: 1px solid #333333;
+  display: block; 
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  @include column(3, 1);
+  @include prepend-column(0.5); }
+
+input[type=text], input[type=password], input[type=url] {
+  @include column(3, 1);
+  @include prepend-column(0.5);
+}
+
+input[type=submit] {
+  @include clean-pill-button(rgb(0,182,241));
+  @include prepend-column(0.5); }
+
+html {
+  background: $footerBGColor; }
+
+body {
+  background: $secondaryBGColor;
+  color: $primaryColor;
+  // Stops Mobile Safari from auto-adjusting font-sizes
+  -webkit-text-size-adjust: 100%;
+  @if $show-grid-backgrounds{
+    &:before{
+      z-index: 2;
+      content: " ";
+      display:block;
+      position:absolute;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      width:896px;
+      margin:0 auto;
+      @include grid-background();
+    }
+  }
+}
+p{
+  line-height:1.5;
+}
+header[role= banner] {
+  background: $headerBGColor;
+  .container{
+    padding-top: $line-height;
+    padding-bottom: $line-height;
+  }
+}
+
+body>footer {
+  background: $footerBGColor;
+}
+
+#page {
+  padding-top: $line-height;
+  padding-bottom: $line-height;
+  @include padding-leader(1);
+}
+h1{
+    clear:left;
+    line-height:1.5;
+  }
+#Logo{
+  font-size:2em;
+  text-decoration:none;
+  color:#fff;
+}
+[role=main] {
+  background: $primaryBGColor;
+}
+
+nav {
+  background: $footerBGColor;
+  ul {
+    list-style: none; }
+  li {
+    display: inline-block; }
+  a {
+    display: block;
+    background: $buttonBGColor;
+    color: $buttonColor;
+    text-decoration: none;
+    padding: 6px;
+    &.active, &:hover {
+      background: $buttonBGColorActive;
+      color: $buttonColorActive; 
+    }
+  }
+}
+
+.CTA {
+  background: $primaryBGColor; 
+  &:hover{
+    background:rgba($primaryBGColor, .5);
+  }
+}
+
+aside {
+  background: $primaryBGColor; 
+}
+.scale{
+    margin:0;
+    padding:0;
+    list-style:none;
+    margin-right: auto;
+    margin-left: auto;
+    text-align:center;
+    li{
+      background:#fff;
+      border: 1px solid #ccc;
+      width:120px;
+      margin-right:20px;
+      text-align:center;
+      border-radius:6px;
+      display:inline-block;
+      &:last-child{
+        margin-right:0;
+      }
+      h1{
+        border-bottom:solid 1px #ccc;
+        line-height:1.5;
+        font-size: 1.5em;
+        padding-bottom:.25em;
+      }
+    }
+    .note{
+      font-size:2em;
+      padding-bottom:.25em;
+    }
+
+}
+#notePicker{
+  list-style:none;
+  margin:0;
+  padding:0;
+  li{
+    display:inline-block;
+      }
+  a{
+    text-decoration:none;
+    display:block;
+    background:#ccc;
+    padding:.5em;
+    border:solid 1px #999;
+    border-radius:6px;
+    color:#333;
+    &.active, &:hover{
+      background:#999;
+      color:#fff;
+    }
+  }
+}
+
+
+// Selection colors (easy to forget)
+@include selection-color(unquote("rgb(255,255,158)"));
+

@@ -1,0 +1,184 @@
+@mixin laptop {
+  #{$container} {
+    @include grid(10);
+    @include clearfix;
+  }
+  #Logo{
+    @include column(3, first);
+    float:left;
+    img{
+      max-width:100%;
+    }
+  }
+  header[role= banner] {
+    nav {
+      @include column(7,last);
+      float:left;
+      text-align:right;
+    }
+  }
+  nav.secondary ul{
+  }
+  [role=main] {
+    padding:1.5em 1.5em 1em;
+    float: left;
+  }
+  aside {
+    @include column(3, last);
+    float: left;
+  }
+  .CTA {
+    display: inline-block;
+    @include column(3, last);
+    float: right;
+    text-decoration: none;
+  }
+  .pitch {
+    background:#fff;
+    .content{
+      @include column(6, last);
+      @include prepend-column(4, true);
+      p{
+        font-size:2em;
+        margin-bottom:1em;
+      }
+      .cta a{
+        display:block;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        text-decoration: none; 
+        @include clean-pill-button(#999, 72px);
+        @include prepend-column(2);
+        @include append-column(2);
+        @include pad-column(1);
+        padding-top:6px;
+        line-height:1.25;
+        font-size: 1.75em;
+        text-align:center;
+        color:#fff;
+        span{
+          display:block;
+          font-size:.75em;
+        }
+      }
+    }
+  }
+  .features{
+    clear: left;
+    li:nth-child(2n + 1){
+      @include column(5, first);
+      float:left;
+    }
+    li:nth-child(2n){
+      @include column(5, last);
+      float:left;
+    }
+  }
+  .first {
+    @include column(2, first);
+    @include append-column(1);
+    float: left; 
+  }
+  .second {
+    @include column(6, true);
+    float: left; 
+  }
+  .third {
+    @include column(4, last);
+    float: left; 
+  }
+  .contactForm{
+    clear:left;
+  }
+  .oneCol{
+    @include column(1);
+    float:left;
+    background:#fff;
+  }
+  .oneCol.first{
+    @include column(1, first);
+    clear:left;
+    float:left;
+    background:#fff;
+  }
+  .oneCol.last{
+    @include column(1, last);
+    float:left;
+    background:#fff;
+  }
+  .twoColPad{
+    @include column(2);
+    float:left;
+    background:#fff;
+  }
+  .twoColPad.first{
+    @include column(2, first);
+    float:left;
+    background:#fff;
+  }
+  .twoColPad.last{
+    @include column(2, last);
+    float:left;
+    background:#fff;
+  }
+  .threeColPad{
+    @include column(3);
+    float:left;
+    background:#fff;
+  }
+  .threeColPad.first{
+    @include column(3, first);
+    float:left;
+    background:#fff;
+  }
+  .threeColPad.last{
+    @include column(3, last);
+    float:left;
+    background:#fff;
+  }
+  .fourColPad{
+    @include column(4);
+    float:left;
+    background:#fff;
+  }
+  .fourColPad.first{
+    @include column(4, first);
+    float:left;
+    background:#fff;
+  }
+  .fourColPad.last{
+    @include column(4, last);
+    float:left;
+    background:#fff;
+  }
+  .fiveColPad{
+    @include column(5);
+    float:left;
+    background:#fff;
+  }
+  .fiveColPad.first{
+    @include column(5, first);
+    float:left;
+    background:#fff;
+  }
+  .fiveColPad.last{
+    @include column(5, last);
+    float:left;
+    background:#fff;
+  }
+  .mainTest{
+    @include column(6.5);
+    float:left;
+    background:#fff;
+  }
+  .asideTest{
+    @include column(3.5, last);
+    @include pad-column-left(.5);
+    float:left;
+    background:#fff;
+    margin-right: -14px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  @include laptop; 
+}
+

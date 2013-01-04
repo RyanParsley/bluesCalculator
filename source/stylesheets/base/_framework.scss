@@ -1,0 +1,64 @@
+$grid-element: unquote("body") !default;
+$column-width: 88px !default;
+$gutter-width: 4px !default;
+$column-padding: 10px !default;
+
+@mixin grid($columns) {
+  width: (68px * $columns) + (24px * ($columns - 1));
+  padding: $column-padding * 2;
+}
+
+@mixin prepend-column($columns, $first: false){ 
+  @if $first == true{
+    margin-left: ($columns * $column-width) + ($gutter-width * ($columns)) - $column-padding;
+  } @else {
+    margin-left: ($columns * $column-width) + ($gutter-width * ($columns));
+  }
+}
+
+@mixin append-column($columns, $last: false){
+   @if $last == true{
+    margin-right: ($columns * $column-width) + ($gutter-width * ($columns)) - $column-padding;
+   } @else {
+     margin-right: ($columns * $column-width) + ($gutter-width * ($columns + 1));
+   }
+}
+
+@mixin pad-column($columns){
+  $pad: ((.5 * (($columns * $column-width) + ($gutter-width * ($columns)))) + $column-padding);
+  padding-left: $pad;
+  padding-right: $pad;
+}
+
+@mixin pad-column-left($columns){
+  padding-left: ($columns * ( $column-width + $column-padding)) + $column-padding;
+}
+
+@mixin pad-column-right($columns){
+  padding-right: ($columns * ( $column-width + $column-padding)) + $column-padding;
+}
+
+@mixin column($columns, $place: middle){
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  width: ($column-width * $columns) + ($gutter-width * ($columns - 1));
+  padding: $column-padding;
+  margin-top: $gutter-width;
+  margin-bottom: $gutter-width;
+  @if $place == last{
+    margin-right: -$column-padding;
+    margin-left:0;
+  } @else if $place == first{
+    margin-right:$gutter-width;
+    margin-left:-$column-padding;
+  } @else {
+    margin-left:0;
+    margin-right: $gutter-width;
+  }
+}
+
+@mixin first{
+    margin-left:-$column-padding;
+}
+@mixin last{
+    margin-right:-$column-padding;
+}

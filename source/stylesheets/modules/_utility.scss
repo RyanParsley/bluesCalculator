@@ -1,0 +1,44 @@
+@function strengthen($color, $multiplier: 1, $reversed: $reversed-text) {
+  @if $reversed {
+    @return lighten($color, 20% * $multiplier);
+  } @else {
+    @return darken($color, 20% * $multiplier);
+  }
+}
+
+@function soften($color, $multiplier: 1, $reversed: $reversed-text) {
+  @if $reversed {
+    @return darken($color, 20% * $multiplier);
+  } @else {
+    @return lighten($color, 20% * $multiplier);
+  }
+}
+
+@mixin basic-link($color: $link-color, $visited: $color, $hover: $color, $decoration: "underline") {
+  &:link { 
+    color: $color;
+    @if $decoration == "underline" { text-decoration: underline; }
+    @if $decoration == "plain"     { text-decoration: none; }
+  }
+  &:visited {
+    color: $visited;
+  }
+  &:hover {
+    color: $hover;
+    @if $decoration == "underline" { text-decoration: none; }
+    @if $decoration == "plain"     { text-decoration: underline; }
+  }
+}
+
+@mixin selection-color($color: unquote("rgb(255,255,158)")) {
+  ::selection {background: #{$color};}
+  ::-moz-selection {background: #{$color};}
+  img::selection {background: transparent;}
+  img::-moz-selection {background: transparent;}
+  body {-webkit-tap-highlight-color: #{$color};}
+}
+@mixin classBG($image){
+  .#{$image}{
+    background-image: url(../img/#{$image})
+  }
+}

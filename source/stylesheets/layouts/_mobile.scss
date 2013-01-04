@@ -1,0 +1,107 @@
+@mixin mobile {
+  #{$container} {
+   @include grid(3);
+    margin:0 auto;
+    padding:6px 0 0;
+  }
+  [role=main] {
+    padding:1.5em 1.5em 1em;
+  }
+  aside {
+    @include column(3, last);
+  }
+  .CTA {
+    display: block;
+    text-decoration: none;
+    text-align:center;
+    line-height:3;
+    margin-top:1em;
+  }
+   .pitch {
+    background:#fff;
+    padding-top:1em;
+    padding-bottom:2em;
+    .content{
+      p{
+        font-size:2em;
+        margin-bottom:1em;
+      }
+      .cta a{
+        display:block;
+        -moz-box-sizing: border-box; 
+        -webkit-box-sizing: border-box; 
+        box-sizing: border-box;
+        text-decoration: none; 
+        @include clean-pill-button(#999, 72px);
+        @include prepend-column(1);
+        @include append-column(1);
+        @include pad-column(1);
+        padding-top:6px;
+        line-height:1.25;
+        font-size: 1.75em;
+        text-align:center;
+        color:#fff;
+        span{
+          display:block;
+          font-size:.75em;
+        }
+      }
+    }
+  }
+  #notePicker{
+    list-style:none;
+    margin:0;
+    padding:0;
+    margin-left:auto;
+    margin-right:auto;
+    width:264px;
+    @include clearfix();
+    li{
+      display:block;
+      width:57px;
+      float:left;
+      text-align:center;
+      margin:0 12px 12px 0;
+      padding:0;
+      &:nth-child(4n){
+        margin-right:0;
+      }
+    }
+    a{
+      text-decoration:none;
+      display:block;
+      background:#ccc;
+      padding:1em .5em;
+      border:solid 1px #999;
+      border-radius:6px;
+      margin:0;
+      color:#333;
+      &.active, &:hover{
+        background:#999;
+        color:#fff;
+      }
+    }
+  }
+
+  footer{padding-bottom:2em;}
+  .scale{
+    @include clearfix();
+    margin-left:auto;
+    margin-right:auto;
+    width:264px;
+    li{
+      float:left;
+      &:nth-child(2n){
+        margin-right:0;
+      }
+      &:nth-child(2n+1){
+        clear:left;
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 479px) {
+  @include mobile; 
+}
+
