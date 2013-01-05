@@ -1,3 +1,13 @@
+###
+# middleman-deploy settings
+###
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.user = "ryan"
+  deploy.host = "ryanparsley.com"
+  deploy.path = "~/public_html/scaleCalculator"
+end
+
 require "./lib/lil_helpers"
 helpers LilHelpers
 
