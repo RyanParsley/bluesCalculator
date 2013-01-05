@@ -1,0 +1,18 @@
+load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+
+set :application, "scaleCalculator"
+set :deploy_to, "~/public_html/scaleCalculator"
+set :deploy_via, :copy
+set :repository, "build" 
+set :scm, :none 
+set :copy_compression, :gzip
+set :use_sudo, false
+set :domain, 'ryanparsley.com'
+set :user, 'ryan'
+
+role :web, 'ryanparsley.com'
+
+before 'deploy:update_code' do
+  run_locally 'rm -rf build/*'
+  run_locally 'middleman build'
+end
