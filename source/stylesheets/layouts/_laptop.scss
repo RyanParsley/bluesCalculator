@@ -4,11 +4,6 @@
     @include clearfix;
   }
   #Logo{
-    @include column(3, first);
-    float:left;
-    img{
-      max-width:100%;
-    }
   }
   header[role= banner] {
     nav {
@@ -33,11 +28,13 @@
     float: right;
     text-decoration: none;
   }
+    #notePicker{
+    text-align:center;
+  }
+
   .pitch {
     background:#fff;
     .content{
-      @include column(6, last);
-      @include prepend-column(4, true);
       p{
         font-size:2em;
         margin-bottom:1em;

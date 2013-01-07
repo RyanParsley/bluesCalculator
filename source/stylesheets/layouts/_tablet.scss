@@ -16,12 +16,13 @@
     float: right;
     text-decoration: none;
   }
+  #notePicker{
+    text-align:center;
+  }
   .pitch {
     background:#fff;
     .content{
-      @include column(7, last);
-      @include prepend-column(3, true);
-      p{
+     p{
         font-size:2em;
         margin-bottom:1em;
       }
