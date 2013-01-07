@@ -8,6 +8,12 @@ activate :deploy do |deploy|
   deploy.path = "~/public_html/scaleCalculator"
 end
 
+
+###
+# Use LiveReload
+###
+activate :livereload
+
 require "./lib/lil_helpers"
 helpers LilHelpers
 

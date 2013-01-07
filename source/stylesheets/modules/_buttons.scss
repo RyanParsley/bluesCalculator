@@ -32,10 +32,8 @@
   border:solid 2px $border-color;
   text-decoration:none;
   color:$color;
-  @include text-shadow(1px 1px 1px rgba(255,255,255,.5)); 
+  @include text-shadow(-1px -1px 0px darken($background-color, 20%)); 
   font-size:18px;
-  padding-left:24px;
-  padding-right:24px;
   @include border-radius(6px);
   &:hover, &.active, &.active-trail{
     color:$color-hover;

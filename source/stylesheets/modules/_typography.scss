@@ -29,7 +29,7 @@
 }
 
 // Basic styles for headings
-@mixin headings($color: $header-color, $line-height: $base-line-height) {
+@mixin headings($color: $primaryColor, $line-height: $base-line-height) {
   h1, h2, h3, h4, h5, h6 {
     color: $color;
     margin: 1em 0;

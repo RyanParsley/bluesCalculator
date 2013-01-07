@@ -70,16 +70,9 @@
     a{
       text-decoration:none;
       display:block;
-      background:#ccc;
       padding:1em .5em;
-      border:solid 1px #999;
       border-radius:6px;
       margin:0;
-      color:#333;
-      &.active, &:hover{
-        background:#999;
-        color:#fff;
-      }
     }
   }
 
