@@ -60,6 +60,11 @@ p{
 }
 header[role= banner] {
   background: $headerBGColor;
+  @include background-image(url(../images/noise.png),
+                            linear-gradient(lighten($headerBGColor, 30%),
+                                              rgba(lighten($headerBGColor, 30%),.1) 50%,
+                                              rgba(lighten($headerBGColor, 30%),0) 50%));
+  border-bottom:solid 1px darken($headerBGColor, 20%);
   .container{
     padding-top: $line-height;
     padding-bottom: $line-height;
@@ -67,8 +72,8 @@ header[role= banner] {
 }
 
 body>footer {
-  background: $footerBGColor;
-}
+  background: $footerBGColor url(../images/noise.png);
+ }
 
 #page {
   padding-top: $line-height;
@@ -82,9 +87,9 @@ h1{
 #Logo{
   font-size:2em;
   text-decoration:none;
-  color:#fff;
+  color:lighten($headerBGColor, 60%);
   border:none;
-  text-shadow: -1px -1px 1px rgba(0,0,0,.3);
+  text-shadow: -1px -1px 0px rgba(0,0,0,.4);
   &:hover{
     color:#dadada;
   }
@@ -131,7 +136,8 @@ aside {
     text-align:center;
     li{
       background:#fff;
-      border: 1px solid #ccc;
+      border: 1px solid #666;
+      @include box-shadow(#aaa 0px 1px 9px 0px inset);
       width:120px;
       margin-right:20px;
       text-align:center;
@@ -141,10 +147,19 @@ aside {
         margin-right:0;
       }
       h1{
-        border-bottom:solid 1px #ccc;
+        border-bottom:solid 1px #fff;
         line-height:1.5;
         font-size: 1.5em;
         padding-bottom:.25em;
+        background:#EAE8FF;
+        @include background-image(linear-gradient(lighten(#EAE8FF, 20%),
+                                              rgba(lighten(#EAE8FF, 20%), 0) 50%,
+                                              rgba(lighten(#EAE8FF, 20%), 0) 50%));
+        box-shadow:rgba(0,0,0,.5) 0px 1px 1px;
+        border-radius: 6px 6px 0px 0px;
+        margin-top:0;
+        padding-top:.25em;
+        text-shadow: #fff 1px 1px 0;
       }
     }
     .note{
@@ -181,9 +196,10 @@ a{
   }
 }
 footer{
-  color:$secondaryBGColor;
+  color:darken($secondaryBGColor, 5%);
   h1,h2,h3{
     color: $secondaryBGColor;
+    text-shadow: -1px -1px 0px #000;
   }
 }
 footer a{
